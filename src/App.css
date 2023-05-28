@@ -1,38 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .App {
-  text-align: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ced9ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userDiv img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.userDiv h1 {
+    margin-top: 10px;
+    color: #4089DD;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.11);
 }
 
-.App-link {
-  color: #61dafb;
+.userDiv span {
+    margin-top: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #252525;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userDiv span:hover {
+    color: #000000;
+}
+
+.userLeft {
+    height: 100%;
+    width: 50%;
+    border-right: 1px solid gray;
+}
+
+.userLeft h2 {
+    color: #4089DD;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.11);
+    margin-top: 10px;
+}
+
+.userTxt {
+    margin-top: 20px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userLeft span {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.userName {
+    display: flex;
+}
+
+.userLastName {
+    margin-left: 5px;
+}
+
+.userRight {
+    height: 100%;
+    width: 50%;
+}
+
+.userRight span {
+    font-size: 1.3em;
+    font-weight: bold;
 }
