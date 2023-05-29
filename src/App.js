@@ -1,7 +1,10 @@
 import './App.css';
 import api from './services/api'
-import { Container, ContainerLeft, ContainerRight, UserDiv, UserInfo, UserLocation } from './style/style';
 import { useState, useEffect } from 'react'
+import { AiOutlinePhone, AiOutlineMail, AiOutlineHome } from 'react-icons/ai'
+import { BsFlag } from 'react-icons/bs'
+
+import { IconContext } from 'react-icons';
 
 function App() {
 
@@ -24,85 +27,68 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
+      <div className='container'>
 
-        <ContainerLeft>
+        <div className='containerLeft'>
 
-          <UserDiv className='userDiv'>
-            <img src={user?.picture?.large}/> 
+          <img src={user?.picture?.large}/>  
 
-            <h1>{user?.name?.first}</h1> 
+        </div>
+        
+        <div className='containerRight'>
 
-            <span onClick={refresh}>Refresh</span>
-          </UserDiv>
+          <div className='containerTxt'>
+            <label>HELLO EVERYBODY I AM</label>
 
-        </ContainerLeft>
+            <h1>{user?.name?.first}</h1>
+            <h1>{user?.name?.last}</h1>
 
-        <ContainerRight>
+            <button onClick={refresh}>New User</button>
 
-          <UserInfo className='userInfo'>
-
-            <div className='userLeft'>
-
-              <h2>{user?.name?.first} Informations</h2> 
-
-              <div className='userTxt'>
-                <label>Name:</label> 
-                <div className='userName'>
-                  <span>{user?.name?.first}</span> 
-
-                 <div className='userLastName'>
-                    <span>{user?.name?.last}</span> 
-                 </div>
-
-                </div>
+            <div className='userInfo'>
+              <div className='icon'>
+                <IconContext.Provider value={{ size: '20px'}}> 
+                  <AiOutlinePhone />
+                </IconContext.Provider>
               </div>
 
-              <div className='userTxt'>
-                <label>Gender:</label>
-                <span>{user?.gender}</span> 
-              </div>
-
-              <div className='userTxt'>
-                <label>Age:</label>
-                <span>{user?.dob?.age}</span> 
-              </div>
-
+              <p>{user?.phone}</p>  
             </div>
 
-            <div className='userRight'>
-
-            <div className='userTxt'>
-                <label>Phone:</label>
-                <span>{user?.phone}</span> 
+            <div className='userInfo'>
+              <div className='icon'>
+                <IconContext.Provider value={{ size: '20px'}}>
+                  <AiOutlineMail />
+                </IconContext.Provider>
               </div>
 
-              <div className='userTxt'>
-                <label>Cell:</label>
-                <span>{user?.cell}</span> 
-              </div>
-
-              <div className='userTxt'>
-                <label>Nationality:</label>
-                <span>{user?.nat}</span> 
-              </div>
-
-              <div className='userTxt'>
-                <label>Country:</label>
-                <span>{user?.location?.country}</span> 
-              </div>
-
+              <p>{user?.email}</p>
             </div>
 
-          </UserInfo>
+            <div className='userInfo'>
+              <div className='icon'>
+                <IconContext.Provider value={{ size: '20px'}}>
+                  <AiOutlineHome />
+                </IconContext.Provider>
+              </div>
 
-          <UserLocation>
-            
-          </UserLocation>
+              <p>{user?.location?.city}</p>
+            </div>
 
-        </ContainerRight>
+            <div className='userInfo'>
+              <div className='icon'>
+                <IconContext.Provider value={{ size: '20px'}}>
+                  <BsFlag />
+                </IconContext.Provider>
+              </div>
 
-      </Container>
+              <p>{user?.location?.country}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   );
 }
